@@ -1,0 +1,81 @@
+<style>
+  .btn-search{
+    background-color: #fe424d;
+    color: white;
+  }
+  .btn-search:hover{
+    background-color: #db1724;
+    color: white;
+  }
+  .btn-search i{
+display: inline;
+margin-right: 0.8rem;
+  }
+  .search-input{
+    font-size: 15px;
+    width: 20rem;
+    padding: 0 2rem 0 rem;
+    border-radius: 12px;
+  }
+</style>
+
+<nav class="navbar navbar-expand-md navbar-light bg-white border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+       
+        <a class="nav-link" href="/listings">Explore</a>
+        <a class="nav-link" href="/listings/new">Add New Listing</a>
+        <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
+      </div>
+      
+      <div class="navbar-nav ms-auto">
+        <nav class="navbar navbar-light">
+          <div class="container-fluid">
+            <form class="d-flex">
+              <input class="form-control me-2 search-input" type="search" placeholder="Search destinations" aria-label="Search">
+              <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass" ></i>Search</button>
+            </form>
+          </div>
+        </nav>
+      </div>
+
+      <div class="navbar-nav ms-auto">
+        <% if(!currUser){%>
+          <a class="nav-link" href="/signup"><b>Sign Up</b></a>
+          <a class="nav-link" href="/login"><b>Log In</b></a>
+          <% } %>
+
+          <% if(currUser){%>
+            <a class="nav-link" href="/logout"><b>Log Out</b></a>
+            <% } %>
+            <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- <script>
+  function search(){
+  let filter= document.getElementsByClassName("search-input");
+  let item= document.querySelectorAll(".listing-link");
+  let title= document.getElementsByTagName("p");
+  for(let i=0; i<=title.length; i++ ){
+    let a= item[i].getElementsByTagName("p")[0];
+    let value= a.innerHTML || a.innerText || a.textContent;
+
+    if(value.indexOf(filter) >-1){
+      item[i].style.dislay= "";
+    }
+    else{
+      item[i].style.dislay= "none ";
+    }
+
+  }
+}
+</script> -->
